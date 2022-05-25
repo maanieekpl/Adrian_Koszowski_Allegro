@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ngQqRAytEgQ+XjutC/tXxHamwcs9zwmNUZJ8HOjfh3DD+dCKhKNktbrk0Vmn2RMSSYL/yAtod0rX6y5H0AU+NA==",
+  "dgSpecHash": "tsa+M2sYK39rFWzHByf/FLe/fW02797gmXwuULMjA0Z6v0MubX23u3S8ERtPqztUrbHgEBBuDngScw6oQOg0rg==",
   "success": true,
-  "projectFilePath": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service3.Tests\\Adrian.Koszowski.Service3.Tests.csproj",
+  "projectFilePath": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service3.Tests\\Adrian.Koszowski.Service3.Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adria\\.nuget\\packages\\coverlet.collector\\3.1.2\\coverlet.collector.3.1.2.nupkg.sha512",
     "C:\\Users\\adria\\.nuget\\packages\\microsoft.codecoverage\\17.1.0\\microsoft.codecoverage.17.1.0.nupkg.sha512",

@@ -213,11 +213,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service1\\Adrian.Koszowski.Service1.csproj",
+      "projectUniqueName": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service1\\Adrian.Koszowski.Service1.csproj",
       "projectName": "Adrian.Koszowski.Service1",
-      "projectPath": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service1\\Adrian.Koszowski.Service1.csproj",
+      "projectPath": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service1\\Adrian.Koszowski.Service1.csproj",
       "packagesPath": "C:\\Users\\adria\\.nuget\\packages\\",
-      "outputPath": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service1\\obj\\",
+      "outputPath": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\adria\\AppData\\Roaming\\NuGet\\NuGet.Config",
