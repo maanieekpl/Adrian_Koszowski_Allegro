@@ -8,10 +8,14 @@ COPY Adrian.Koszowski.Service1/Adrian.Koszowski.Service1.csproj ./Adrian.Koszows
 COPY Adrian.Koszowski.Service2/Adrian.Koszowski.Service2.csproj ./Adrian.Koszowski.Service2/
 COPY Adrian.Koszowski.Service3/Adrian.Koszowski.Service3.csproj ./Adrian.Koszowski.Service3/
 
+COPY Adrian.Koszowski.Service1.Tests/Adrian.Koszowski.Service1.Tests.csproj ./Adrian.Koszowski.Service1.Tests/
+COPY Adrian.Koszowski.Service2.Tests/Adrian.Koszowski.Service2.Tests.csproj ./Adrian.Koszowski.Service2.Tests/
+COPY Adrian.Koszowski.Service3.Tests/Adrian.Koszowski.Service3.Tests.csproj ./Adrian.Koszowski.Service3.Tests/
+
 # copy everything else and build app
-COPY Adrian.Koszowski.Service1/ ./Adrian.Koszowski.Service1/
-COPY Adrian.Koszowski.Service2/ ./Adrian.Koszowski.Service2/
-COPY Adrian.Koszowski.Service3/ ./Adrian.Koszowski.Service3/
+COPY Adrian.Koszowski.Service1.Tests/ ./Adrian.Koszowski.Service1.Tests/
+COPY Adrian.Koszowski.Service2.Tests/ ./Adrian.Koszowski.Service2.Tests/
+COPY Adrian.Koszowski.Service3.Tests/ ./Adrian.Koszowski.Service3.Tests/
 
 RUN dotnet restore
 
