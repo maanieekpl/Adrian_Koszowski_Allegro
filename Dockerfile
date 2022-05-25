@@ -1,5 +1,5 @@
 # syntax=docker/dockerfile:1
-FROM mcr.microsoft.com/dotnet/core/sdk:6.0 AS build
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /app 
 #
 # copy csproj and restore as distinct layers
@@ -27,7 +27,7 @@ COPY Adrian.Koszowski.Service3.Tests/. ./Adrian.Koszowski.Service3.Tests/
 WORKDIR /app/Adrian.Koszowski.Service1
 RUN dotnet publish -c Release -o out 
 #
-FROM mcr.microsoft.com/dotnet/core/aspnet:6.0 AS runtime
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS runtime
 WORKDIR /app 
 #
 COPY --from=build /app/Adrian.Koszowski.Service1/out ./
