@@ -1,0 +1,50 @@
+variables:
+- name: BuildParameters.RestoreBuildProjects
+  value: >-
+    Adrian.Koszowski.Service1\Adrian.Koszowski.Service1.csproj
+
+    Adrian.Koszowski.Service2\Adrian.Koszowski.Service2.csproj
+
+    Adrian.Koszowski.Service3\Adrian.Koszowski.Service3.csproj
+- name: BuildParameters.TestProjects
+  value: >-
+    Adrian.Koszowski.Service1.Tests\Adrian.Koszowski.Service1.Tests.csproj
+
+    Adrian.Koszowski.Service2.Tests\Adrian.Koszowski.Service2.Tests.csproj
+
+    Adrian.Koszowski.Service3.Tests\Adrian.Koszowski.Service3.Tests.csproj
+trigger:
+  branches:
+    include:
+    - master
+name: $(date:yyyyMMdd)$(rev:.r)
+jobs:
+- job: Job_1
+  displayName: CI
+  pool:
+    name: Default
+  steps:
+  - checkout: self
+    clean: true
+  - task: DotNetCoreCLI@2
+    displayName: Restore
+    inputs:
+      command: restore
+      projects: $(BuildParameters.RestoreBuildProjects)
+  - task: DotNetCoreCLI@2
+    displayName: Build
+    inputs:
+      projects: $(BuildParameters.RestoreBuildProjects)
+      arguments: --configuration $(BuildConfiguration)
+  - task: DotNetCoreCLI@2
+    displayName: Test
+    inputs:
+      command: test
+      projects: $(BuildParameters.TestProjects)
+      arguments: --configuration $(BuildConfiguration)
+  - task: Docker@2
+    displayName: Build and Push Docker Container
+    inputs:
+      containerRegistry: 17e1e41a-ad38-4edf-8f63-51c68c1a2526
+      repository: maanieekpl / allegro_task
+...
