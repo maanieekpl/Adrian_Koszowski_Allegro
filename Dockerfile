@@ -1,6 +1,5 @@
 # syntax=docker/dockerfile:1
-#FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
-FROM mcr.microsoft.com/dotnet/core/sdk:6.0 AS build-env
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
@@ -32,7 +31,7 @@ RUN dotnet publish Adrian_Koszowski_Allegro -c Release -o out
 #ENTRYPOINT ["dotnet", "aspnetapp.dll"]
 
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:6.0
+FROM mcr.microsoft.com/dotnet/sdk:6.0
 WORKDIR /app
 COPY --from=build-env /app/Adrian_Koszowski_Allegro/out .
 
