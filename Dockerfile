@@ -32,3 +32,4 @@ WORKDIR /app
 #
 COPY --from=build /app/Adrian.Koszowski.Service1/out ./
 ENTRYPOINT ["dotnet", "Adrian.Koszowski.Service1.dll"]
+#test
