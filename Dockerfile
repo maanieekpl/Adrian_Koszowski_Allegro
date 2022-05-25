@@ -1,38 +1,34 @@
 # syntax=docker/dockerfile:1
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
-WORKDIR /app
+FROM mcr.microsoft.com/dotnet/core/sdk:6.0 AS build
+WORKDIR /app 
+#
+# copy csproj and restore as distinct layers
+COPY *.sln .
+COPY Adrian.Koszowski.Service1/*.csproj ./Adrian.Koszowski.Service1/
+COPY Adrian.Koszowski.Service2/*.csproj ./Adrian.Koszowski.Service2/
+COPY Adrian.Koszowski.Service3/*.csproj ./Adrian.Koszowski.Service3/
 
-# Copy csproj and restore as distinct layers
-#COPY *.sln .
-#COPY Adrian.Koszowski.Service1/Adrian.Koszowski.Service1.csproj ./Adrian.Koszowski.Service1/
-#COPY Adrian.Koszowski.Service2/Adrian.Koszowski.Service2.csproj ./Adrian.Koszowski.Service2/
-#COPY Adrian.Koszowski.Service3/Adrian.Koszowski.Service3.csproj ./Adrian.Koszowski.Service3/
-
-#COPY Adrian.Koszowski.Service1.Tests/Adrian.Koszowski.Service1.Tests.csproj ./Adrian.Koszowski.Service1.Tests/
-#COPY Adrian.Koszowski.Service2.Tests/Adrian.Koszowski.Service2.Tests.csproj ./Adrian.Koszowski.Service2.Tests/
-#COPY Adrian.Koszowski.Service3.Tests/Adrian.Koszowski.Service3.Tests.csproj ./Adrian.Koszowski.Service3.Tests/
-
+COPY Adrian.Koszowski.Service1.Tests/*.csproj ./Adrian.Koszowski.Service1.Tests/
+COPY Adrian.Koszowski.Service2.Tests/*.csproj ./Adrian.Koszowski.Service2.Tests/ 
+COPY Adrian.Koszowski.Service3.Tests/*.csproj ./Adrian.Koszowski.Service3.Tests/ 
+#
+RUN dotnet restore 
+#
 # copy everything else and build app
-#COPY Adrian.Koszowski.Service1.Tests/ ./Adrian.Koszowski.Service1.Tests/
-#COPY Adrian.Koszowski.Service2.Tests/ ./Adrian.Koszowski.Service2.Tests/
-#COPY Adrian.Koszowski.Service3.Tests/ ./Adrian.Koszowski.Service3.Tests/
+COPY Adrian.Koszowski.Service1/. ./Adrian.Koszowski.Service1/
+COPY Adrian.Koszowski.Service2/. ./Adrian.Koszowski.Service2/
+COPY Adrian.Koszowski.Service3/. ./Adrian.Koszowski.Service3/
 
-#RUN dotnet restore
+COPY Adrian.Koszowski.Service1.Tests/. ./Adrian.Koszowski.Service1.Tests/
+COPY Adrian.Koszowski.Service2.Tests/. ./Adrian.Koszowski.Service2.Tests/
+COPY Adrian.Koszowski.Service3.Tests/. ./Adrian.Koszowski.Service3.Tests/
 
-COPY . ./
-RUN dotnet publish Adrian_Koszowski_Allegro -c Release -o out
-
-# Build runtime image
-#FROM mcr.microsoft.com/dotnet/aspnet:6.0
-#FROM mcr.microsoft.com/dotnet/sdk:6.0
-#WORKDIR /app
-#RUN mkdir /app
-#COPY --from=build-env /app/out ./app
-#ENTRYPOINT ["dotnet", "aspnetapp.dll"]
-
-
-FROM mcr.microsoft.com/dotnet/sdk:6.0
-WORKDIR /app
-COPY --from=build-env /app/Adrian_Koszowski_Allegro/out .
-
-ENTRYPOINT ["dotnet", "Adrian_Koszowski_Allegro.dll"]
+#
+WORKDIR /app/Adrian.Koszowski.Service1
+RUN dotnet publish -c Release -o out 
+#
+FROM mcr.microsoft.com/dotnet/core/aspnet:6.0 AS runtime
+WORKDIR /app 
+#
+COPY --from=build /app/Adrian.Koszowski.Service1/out ./
+ENTRYPOINT ["dotnet", "Adrian.Koszowski.Service1.dll"]
