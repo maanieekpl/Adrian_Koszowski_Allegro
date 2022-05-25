@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "8QMHn8fGFr3joZEHH5U6lRE3qlOcOUjsN+nyekJMbsdNunFXjqU8C2FlxeoBQp97KbuD8kHlhMZKDHsuzEsaDQ==",
+  "dgSpecHash": "E7IAsKIHgeC6AE8NT5e0g1wd+Vl4r+TXVFiGpjFo7oK/d8kAIswC+7w+qlMacFSKKIZS42j06K0HsF0dOJ3quQ==",
   "success": true,
-  "projectFilePath": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service1\\Adrian.Koszowski.Service1.csproj",
+  "projectFilePath": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service1\\Adrian.Koszowski.Service1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\adria\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\adria\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

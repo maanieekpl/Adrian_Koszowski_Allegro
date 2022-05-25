@@ -5982,11 +5982,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service2.Tests\\Adrian.Koszowski.Service2.Tests.csproj",
+      "projectUniqueName": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service2.Tests\\Adrian.Koszowski.Service2.Tests.csproj",
       "projectName": "Adrian.Koszowski.Service2.Tests",
-      "projectPath": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service2.Tests\\Adrian.Koszowski.Service2.Tests.csproj",
+      "projectPath": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service2.Tests\\Adrian.Koszowski.Service2.Tests.csproj",
       "packagesPath": "C:\\Users\\adria\\.nuget\\packages\\",
-      "outputPath": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service2.Tests\\obj\\",
+      "outputPath": "C:\\repo\\Adrian_Koszowski_Allegro\\Adrian.Koszowski.Service2.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\adria\\AppData\\Roaming\\NuGet\\NuGet.Config",
